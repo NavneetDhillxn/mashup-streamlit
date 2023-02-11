@@ -12,8 +12,11 @@ from email import encoders
 from dotenv import load_dotenv
 
 load_dotenv()
-email_main=os.getenv("EMAIL_MAIN")
-pass_key = os.getenv("PASS_KEY")
+# email_main=os.getenv("EMAIL_MAIN")
+# pass_key = os.getenv("PASS_KEY")
+email_main="nsingh2_be20@thapar.edu"
+pass_key ="inztevbxnieinayc"
+
 
 def send_email_with_attachment(email, password, to, subject, body, file_path):
     msg = MIMEMultipart()
