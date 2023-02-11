@@ -4,6 +4,7 @@ import os
 import smtplib
 from youtube_search import YoutubeSearch
 from pytube import YouTube
+from pytube.exceptions import VideoUnavailable
 from moviepy.editor import *
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -52,8 +53,12 @@ def createmash(Singer,num,dur):
     results = YoutubeSearch(Singer, max_results=int(num)).to_dict()
 
     for i in results:
-        video = YouTube('http://youtube.com/watch?v='+i['id']).streams.filter(only_audio=True).first().download()
-        if(video):
+        try:
+            video = YouTube('http://youtube.com/watch?v='+i['id']).streams.filter(only_audio=True).first().download()
+        
+        except VideoUnavailable:
+            pass  # Skip videos that can't be loaded
+        else:
             base, ext = os.path.splitext(video)
             new_file = base + '.mp3'
             os.rename(video, new_file)
