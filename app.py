@@ -53,9 +53,10 @@ def createmash(Singer,num,dur):
 
     for i in results:
         video = YouTube('http://youtube.com/watch?v='+i['id']).streams.filter(only_audio=True).first().download()
-        base, ext = os.path.splitext(video)
-        new_file = base + '.mp3'
-        os.rename(video, new_file)
+        if(video):
+            base, ext = os.path.splitext(video)
+            new_file = base + '.mp3'
+            os.rename(video, new_file)
 
     filedir=os.getcwd()
     files=os.listdir(filedir)
