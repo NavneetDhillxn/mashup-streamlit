@@ -6,5 +6,5 @@ This is a web app that can be used to create mashup of songs.
 <br><br>
 Songs of the singer are then downloaded and chopped off accordingly and mashup of songs is created.
 <br><br>
-<b>Output -------------------------------</b><br>
+<b>OUTPUT -------------------------------</b><br>
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The output i.e mashup of the songs in mp3 format is then mailed to the provided email.
