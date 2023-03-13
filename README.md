@@ -1,10 +1,10 @@
 # mashup-streamlit
 This is a web app that can be used to create mashup of songs.
-
-INPUT --------------------------------\n
+<br><br>
+INPUT -------------------------------<br>
     you have to specify name of the singer, number of songs, email and audio length of each part of song to cut.
-
+<br><br>
 Songs of the singer are then downloaded and chopped off accordingly.
-
-Output -------------------------------\n
+<br><br>
+Output -------------------------------<br>
     the output i.e mashup of the songs is then mailed to the provided email.
